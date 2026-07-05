@@ -22,7 +22,7 @@ app.post('/login', (req, res) => {
     res.status(201).json({success: true, person: name})
 })
 
-app.post('/api/post/people', (req, res) => {
+app.post('/api/people/post', (req, res) => {
     const {name} = req.body 
     if(!name){
         return res.status(400).json({success: false, message: "Insert a value"})
