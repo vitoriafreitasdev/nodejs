@@ -1,0 +1,4 @@
+--para usar o require('pacote') e module.exports
+tirar a linha:
+  "type": "module"
+do package.json

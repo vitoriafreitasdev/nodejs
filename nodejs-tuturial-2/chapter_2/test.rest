@@ -1,0 +1,13 @@
+### TEST GET / WEBSITE
+GET http://localhost:8383
+### TEST GET / API
+GET http://localhost:8383/api/data
+### TEST POST / API
+POST http://localhost:8383/api/data
+Content-Type: application/json
+
+{
+    "name": "Mark"
+}
+### TEST DELETE / API 
+DELETE http://localhost:8383/api/endpoint

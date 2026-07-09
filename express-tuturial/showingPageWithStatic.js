@@ -8,9 +8,9 @@ app.use(express.static('./public'))
 // app.get('/', (req, res) => {
 //     //absolute path
 //     res.sendFile(path.resolve(__dirname, './nav-bar/index.html'))
-////   Forms to show dinamic pages 
-////   adding to static assets
-////   SSR
+// //   Forms to show dinamic pages 
+// //   adding to static assets
+// //   SSR
 // })
 
 app.all('/*path', (req, res) => {

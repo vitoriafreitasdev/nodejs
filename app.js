@@ -1,2 +1,3 @@
-require('./express-tuturial/router-express/routerApp')
+//require('./express-tuturial/showingPageWithStatic')
+
 
