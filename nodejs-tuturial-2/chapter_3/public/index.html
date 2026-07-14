@@ -116,7 +116,9 @@
 
     function changeTab(tab) {
         selectedTab = tab
+        console.log("Tab: ", tab)
         navElements.forEach(val => {
+            console.log("val ", val)
             if (val.innerText.includes(tab)) {
                 val.classList.add('selected-tab')
             } else {
@@ -187,7 +189,9 @@
             !passVal ||
             passVal.length < 6 ||
             !emailVal.includes('@')
-        ) { return }
+        ) { 
+            return
+         }
 
         // reset error and set isAuthenticating to true
         error.style.display = 'none'
@@ -203,6 +207,7 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ username: emailVal, password: passVal })
                 })
+                console.log('response: ',  response)
                 data = await response.json()
             } else {
                 // login an account
@@ -211,6 +216,8 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ username: emailVal, password: passVal })
                 })
+                console.log('response: ',  response)
+
                 data = await response.json()
             }
 
