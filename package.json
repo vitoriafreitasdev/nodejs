@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node --watch --env-file=./nodejs-tuturial-2/chapter_3/.env --experimental-strip-types --experimental-sqlite ./nodejs-tuturial-2/chapter_3/src/server.js"
+    "start": "node --watch --env-file=./auth-course/.env --experimental-strip-types --experimental-sqlite ./auth-course/passportjs/app.js"
   },
   "keywords": [],
   "author": "",
@@ -22,7 +22,12 @@
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
+    "connect-mongo": "^6.0.0",
     "express": "^5.2.1",
-    "jsonwebtoken": "^9.0.3"
+    "express-session": "^1.19.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.7.4",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
   }
 }
