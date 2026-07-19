@@ -11,7 +11,7 @@ const router = express.Router()
  */
 
  // TODO
- router.post('/login', (req, res, next) => {});
+ router.post('/login', passport.authenticate('local'),(req, res, next) => {});
 
  // TODO
  router.post('/register', (req, res, next) => {});

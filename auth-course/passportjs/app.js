@@ -16,7 +16,6 @@ import './config/passport.js'
  * -------------- GENERAL SETUP ----------------
  */
 
-
 // Create the Express application
 const app = express();
 
@@ -26,7 +25,22 @@ app.use(express.urlencoded({extended: true}));
 
 /**
  * -------------- SESSION SETUP ----------------
- */
+*/
+
+const sessionStore = MongoStore.create({
+    client: connection.getClient(),
+    collection: 'sessions'
+})
+
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: true,
+    store: sessionStore,
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24 // equals 1 day
+    }
+}))
 
 // TODO
 
@@ -44,7 +58,6 @@ app.use(passport.session());
 
 // Imports all of the routes from ./routes/index.js
 app.use(routes);
-
 
 /**
  * -------------- SERVER ----------------
