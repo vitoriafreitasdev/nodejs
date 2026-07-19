@@ -1,7 +1,7 @@
 import express from 'express'
 import passport from 'passport';
-import {validPassword, genPassword} from '../lib/passwordUtils'
-import connection from '../config/database';
+import {validPassword, genPassword} from '../lib/passwordUtils.js'
+import connection from '../config/database.js';
 
 const User = connection.models.User
 const router = express.Router()

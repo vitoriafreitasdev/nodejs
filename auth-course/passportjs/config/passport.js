@@ -1,6 +1,6 @@
 import passport from 'passport';
 import passportLocal from 'passport-local'
-import connection from './database';
+import connection from './database.js';
 
 const LocalStrategy = passportLocal.Strategy;
 

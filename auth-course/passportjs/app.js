@@ -1,23 +1,21 @@
 import express from 'express'
 import mongoose from 'mongoose';
-import session from 'express-session'
 import passport from 'passport';
 import crypto from 'crypto'
-import router from './routes';
-import connection from '../config/database';
+import routes from './routes/index.js';
+import connection from './config/database.js';
+import MongoStore from 'connect-mongo';
+import session from 'express-session'
 
 // Package documentation - https://www.npmjs.com/package/connect-mongo
-const MongoStore = require('connect-mongo')(session);
 
 // Need to require the entire Passport config module so app.js knows about it
-require('./config/passport');
+import './config/passport.js'
 
 /**
  * -------------- GENERAL SETUP ----------------
  */
 
-// Gives us access to variables set in the .env file via `process.env.VARIABLE_NAME` syntax
-require('dotenv').config();
 
 // Create the Express application
 const app = express();

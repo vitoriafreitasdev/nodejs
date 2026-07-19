@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 
-
 /**
  * -------------- DATABASE ----------------
  */
@@ -10,7 +9,7 @@ import mongoose from 'mongoose';
  * string into the `.env` file
  * 
  * DB_STRING=mongodb://<user>:<password>@localhost:27017/database_name
- */ 
+*/ 
 
 const conn = process.env.STRING_CONNECTION;
 
