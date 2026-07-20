@@ -22,7 +22,6 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-
 /**
  * -------------- SESSION SETUP ----------------
 */
@@ -47,11 +46,16 @@ app.use(session({
 /**
  * -------------- PASSPORT AUTHENTICATION ----------------
  */
-
+// init passport on every route call
 app.use(passport.initialize());
+// allow passport to use "express-session".
 app.use(passport.session());
 
-
+app.use((req, res, next) => {
+    console.log(req.session)
+    console.log(req.user)
+    next()
+})
 /**
  * -------------- ROUTES ----------------
  */
@@ -62,6 +66,5 @@ app.use(routes);
 /**
  * -------------- SERVER ----------------
  */
-
 // Server listens on http://localhost:3000
 app.listen(3000);

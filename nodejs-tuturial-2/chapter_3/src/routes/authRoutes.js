@@ -27,6 +27,7 @@ router.post('/register', (req, res) => {
 
         //create token
         const token = jwt.sign({id: result.lastInsertRowid }, process.env.JWT_SECRET, {expiresIn: '24h'})
+   
         return res.json({token})
     } catch (error) {
         console.log(error)

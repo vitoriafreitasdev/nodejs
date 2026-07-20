@@ -2,3 +2,4 @@
 tirar a linha:
   "type": "module"
 do package.json
+

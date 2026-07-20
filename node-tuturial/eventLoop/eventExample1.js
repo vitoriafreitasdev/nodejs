@@ -1,4 +1,5 @@
-const {readFile} = require('fs')
+//const {readFile} = require('fs')
+import { readFile } from 'fs'
 console.log("Started a first task")
 
 readFile('first.txt', 'utf-8', (err, result) => {
