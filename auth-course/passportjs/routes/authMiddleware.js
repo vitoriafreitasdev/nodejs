@@ -19,6 +19,12 @@ const isAuth = (req, res, next) => {
 }
 
 const isAdmin = (req, res, next) => {
+    if(req.isAuthenticated() && req.user.admin){
+        next()
+    }
+    else{
+        res.status(401).json({msg: "Not authorized only admin"})
+    }
 
 }
 

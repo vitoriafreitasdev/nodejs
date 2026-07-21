@@ -81,6 +81,10 @@ router.get('/protected-route', isAuth, (req, res, next) => {
     res.send('<h1>You are authenticated</h1><p><a href="/logout">Logout and reload</a></p>');
 });
 
+router.get('/admin-route', isAdmin, (req, res, next) => {
+    res.send('<h1>Admin Section</h1><p><a href="/logout">Logout and reload</a></p>');
+});
+
 // Visiting this route logs the user out
 router.get('/logout', (req, res, next) => {
     /* 
@@ -88,7 +92,7 @@ router.get('/logout', (req, res, next) => {
     */
     req.logout((err) => {
         if (err) { return err }
-        res.redirect('/protected-route');
+        res.redirect('/');
     });
 });
 
